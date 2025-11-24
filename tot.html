@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pscrii – Where Stories Come Alive. Discover inspiring stories, entertainment, and news.">
+  <meta name="keywords" content="stories, pscrii, blog, entertainment, lifestyle, storyhub">
+  <meta name="author" content="Pscrii">
+  <title>Pscrii – Where Stories Come Alive</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://pscrii.com/assets/favicon.ico" type="image/x-icon">
+</head>
+<body class="bg-gray-50 text-gray-800 font-inter">
+
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <h1 class="text-2xl font-bold text-indigo-600">Pscrii</h1>
+      <nav class="hidden md:flex gap-6 text-gray-600">
+        <a href="#stories" class="hover:text-indigo-600">Stories</a>
+        <a href="categories.html" class="hover:text-indigo-600">Categories</a>
+        <a href="about.html" class="hover:text-indigo-600">About</a>
+        <a href="contact.html" class="hover:text-indigo-600">Contact</a>
+      </nav>
+      <button class="md:hidden text-2xl text-gray-600" id="menu-btn"><i class="ri-menu-line"></i></button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-indigo-600 text-white text-center py-20 px-4">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Where Stories Come Alive</h2>
+    <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+      Join Pscrii and explore inspiring stories from creators across the world.
+    </p>
+    <a id="start-reading" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-indigo-100 transition">Start Reading</a>
+
+<script>
+  const lastStory = localStorage.getItem("last_story");
+
+  document.getElementById("start-reading").addEventListener("click", () => {
+    if (lastStory) {
+      window.location.href = lastStory; // continue where user stopped
+    } else {
+      window.location.href = "#stories"; // fallback
+    }
+  });
+</script>
+
+  </section>
+
+
+  <main id="stories" class="container mx-auto px-4 py-16">
+  <h3 class="text-3xl font-semibold text-center mb-10">Featured Stories</h3>
+  <div class="grid md:grid-cols-3 gap-8">
+
+    <!-- Story 1 -->
+    <article class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1000&q=80" 
+           alt="A Journey Through the Mountains" class="w-full h-56 object-cover">
+      <div class="p-6">
+        <h4 class="text-xl font-semibold mb-2">A Journey Through the Mountains</h4>
+        <p class="text-gray-600 mb-4">An inspiring adventure of courage, discovery, and nature’s untold beauty.</p>
+        <a href="#" class="text-indigo-600 font-medium hover:underline">Read More →</a>
+      </div>
+    </article>
+
+    <!-- Story 2 -->
+    <article class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=1000&q=80" 
+           alt="City Lights and Hidden Dreams" class="w-full h-56 object-cover">
+      <div class="p-6">
+        <h4 class="text-xl font-semibold mb-2">City Lights and Hidden Dreams</h4>
+        <p class="text-gray-600 mb-4">Under the neon glow, dreams collide with reality in the heartbeat of the city.</p>
+        <a href="#" class="text-indigo-600 font-medium hover:underline">Read More →</a>
+      </div>
+    </article>
+
+    <!-- Story 3 -->
+    <article class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80" 
+           alt="Echoes of the Sea" class="w-full h-56 object-cover">
+      <div class="p-6">
+        <h4 class="text-xl font-semibold mb-2">Echoes of the Sea</h4>
+        <p class="text-gray-600 mb-4">Waves carry stories of love, loss, and longing in this poetic coastal tale.</p>
+        <a href="#" class="text-indigo-600 font-medium hover:underline">Read More →</a>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+
+  <footer class="bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="col-span-1 md:col-span-2">
+          <h3 class="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent" style="font-family: Pacifico, serif;">Pscrii</h3>
+          <p class="text-gray-300 mb-6 max-w-md">
+            Your ultimate destination for captivating stories, breaking news, and exclusive insights.  
+            Join readers who trust us for inspiring, original content.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center hover:bg-purple-700 transition-colors"><i class="ri-facebook-fill text-white"></i></a>
+            <a href="#" class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center hover:bg-purple-700 transition-colors"><i class="ri-twitter-fill text-white"></i></a>
+            <a href="#" class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center hover:bg-purple-700 transition-colors"><i class="ri-instagram-fill text-white"></i></a>
+            <a href="#" class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center hover:bg-purple-700 transition-colors"><i class="ri-youtube-fill text-white"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-300 hover:text-white">Stories</a></li>
+            <li><a href="news.html" class="text-gray-300 hover:text-white">News</a></li>
+            <li><a href="celebrities" class="text-gray-300 hover:text-white">Celebrities</a></li>
+            <li><a href="about.html" class="text-gray-300 hover:text-white">About Us</a></li>
+            <li><a href="contact.html" class="text-gray-300 hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Categories</h4>
+          <ul class="space-y-2">
+            <li><a href="entertainment.html" class="text-gray-300 hover:text-white">Entertainment</a></li>
+            <li><a href="lifestyle.html" class="text-gray-300 hover:text-white">Lifestyle</a></li>
+            <li><a href="technology.html" class="text-gray-300 hover:text-white">Technology</a></li>
+            <li><a href="sports.html" class="text-gray-300 hover:text-white">Sports</a></li>
+            <li><a href="politics.html" class="text-gray-300 hover:text-white">Politics</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-sm">© 2025 Pscrii. All rights reserved.</p>
+        <div class="flex items-center space-x-6 mt-4 md:mt-0">
+          <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+          <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+          <a href="https://readdy.ai/?origin=logo" class="text-gray-400 hover:text-white text-sm">Website Builder</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+ <script src="https://readdy.ai/api/public/assistant/widget?projectId=286a68ce-5877-48b3-b316-34ecb13067ae" 
+        mode="hybrid" 
+        assistant-name="Pscrii Hub"
+        voice-show-transcript="true" 
+        theme="light" 
+        size="compact" 
+        accent-color="#14B8A6" 
+        button-base-color="#000000" 
+        button-accent-color="#FFFFFF" 
+        defer>
+</script>
+
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const nav = document.querySelector('nav');
+    menuBtn.addEventListener('click', () => nav.classList.toggle('hidden'));
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Categories – Pscrii</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    /* small visual helpers */
+    .blob { position: absolute; filter: blur(60px); opacity: .65; z-index: -1; pointer-events: none; }
+    .chip-active { background: linear-gradient(90deg,#4f46e5,#ec4899); color: white; }
+    .masonry { column-gap: 1.4rem; }
+    @media(min-width:768px){ .masonry{ column-count:2; } }
+    @media(min-width:1024px){ .masonry{ column-count:3; } }
+    .masonry > article { break-inside: avoid; margin-bottom: 1.5rem; }
+    /* card hover */
+    .card-tilt { transition: transform .35s, box-shadow .35s; }
+    .card-tilt:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(0,0,0,.12); }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-inter">
+
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <h1 class="text-2xl font-bold text-indigo-600">Pscrii</h1>
+      <nav class="hidden md:flex gap-6 text-gray-600">
+        <a href="tot.html" class="hover:text-indigo-600">Home</a>
+        <a href="about.html" class="hover:text-indigo-600">About</a>
+        <a href="contact.html" class="hover:text-indigo-600">Contact</a>
+      </nav>
+      <button class="md:hidden text-2xl text-gray-600" id="menu-btn"><i class="ri-menu-line"></i></button>
+    </div>
+  </header>
+
+  <section class="relative overflow-hidden py-20">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Explore Categories</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto mb-8">Stories across genres — cinematic shots, lifestyle photography, portraits and imaginative sci-fi.</p>
+
+      <div id="filters" class="flex flex-wrap justify-center gap-3">
+        <button class="chip px-4 py-2 rounded-full border border-gray-200 text-sm font-medium chip-active" data-filter="*">All</button>
+        <button class="chip px-4 py-2 rounded-full border border-gray-200 text-sm font-medium" data-filter="fiction">Fiction</button>
+        <button class="chip px-4 py-2 rounded-full border border-gray-200 text-sm font-medium" data-filter="nonfiction">Non-Fiction</button>
+        <button class="chip px-4 py-2 rounded-full border border-gray-200 text-sm font-medium" data-filter="poetry">Poetry</button>
+        <button class="chip px-4 py-2 rounded-full border border-gray-200 text-sm font-medium" data-filter="sci-fi">Sci-Fi</button>
+        <button class="chip px-4 py-2 rounded-full border border-gray-200 text-sm font-medium" data-filter="lifestyle">Lifestyle</button>
+      </div>
+    </div>
+
+    <div class="blob w-[420px] h-[420px] bg-gradient-to-r from-indigo-600 to-pink-500 rounded-full left-[-80px] top-[-80px]"></div>
+    <div class="blob w-[300px] h-[300px] bg-gradient-to-r from-purple-500 to-pink-400 rounded-full right-[-60px] top-[40px]"></div>
+  </section>
+
+  <main class="container mx-auto px-4 pb-20">
+    <div class="masonry" id="grid">
+
+      <!-- 1 -->
+      <article class="card-tilt bg-white rounded-2xl overflow-hidden" data-category="fiction sci-fi">
+        <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702?q=80&w=1600" alt="Neon city" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-indigo-700">Neon City Dreams</h3>
+          <p class="text-gray-600 mt-2">Sci-fi noir where memories are traded like currency.</p>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="card-tilt bg-white rounded-2xl overflow-hidden" data-category="nonfiction">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600" alt="map memoir" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-indigo-700">The Mapmaker’s Daughter</h3>
+          <p class="text-gray-600 mt-2">A memoir about landscapes inherited through family.</p>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="card-tilt bg-white rounded-2xl overflow-hidden" data-category="poetry">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600" alt="ocean poetry" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-indigo-700">Ocean Whispers</h3>
+          <p class="text-gray-600 mt-2">A poetry collection about tides and longing.</p>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="card-tilt bg-white rounded-2xl overflow-hidden" data-category="lifestyle">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1600" alt="morning ritual" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-indigo-700">The Morning Ritual</h3>
+          <p class="text-gray-600 mt-2">A lifestyle guide on building meaningful daily habits.</p>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="card-tilt bg-white rounded-2xl overflow-hidden" data-category="fiction">
+        <img src="https://images.unsplash.com/photo-1494173853739-c21f58b16055?q=80&w=1600" alt="train home" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-indigo-700">The Last Train Home</h3>
+          <p class="text-gray-600 mt-2">A fiction tale of timing and second chances.</p>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="card-tilt bg-white rounded-2xl overflow-hidden" data-category="sci-fi fiction">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600" alt="galactic" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-indigo-700">Galactic Echoes</h3>
+          <p class="text-gray-600 mt-2">Messages from deep space that change humanity.</p>
+        </div>
+      </article>
+
+      <!-- 7 -->
+      <article class="card-tilt bg-white rounded-2xl overflow-hidden" data-category="nonfiction">
+        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=1600" alt="climate stories" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-indigo-700">Becoming Earthbound</h3>
+          <p class="text-gray-600 mt-2">Real stories from climate survivors.</p>
+        </div>
+      </article>
+
+      <!-- 8 -->
+      <article class="card-tilt bg-white rounded-2xl overflow-hidden" data-category="poetry">
+        <img src="https://images.unsplash.com/photo-1483794344563-d27a8d18014e?q=80&w=1600" alt="ink stars" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-indigo-700">Ink & Stars</h3>
+          <p class="text-gray-600 mt-2">Short poems that trace the sky's quiet maps.</p>
+        </div>
+      </article>
+
+      <!-- 9 -->
+      <article class="card-tilt bg-white rounded-2xl overflow-hidden" data-category="lifestyle">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600" alt="minimal living" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-indigo-700">Minimal Living</h3>
+          <p class="text-gray-600 mt-2">Finding peace through fewer things and clearer days.</p>
+        </div>
+      </article>
+
+      <!-- 10 -->
+      <article class="card-tilt bg-white rounded-2xl overflow-hidden" data-category="fiction">
+        <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1600" alt="hidden door" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-indigo-700">The Hidden Door</h3>
+          <p class="text-gray-600 mt-2">A mysterious portal leads to a small town's secret.</p>
+        </div>
+      </article>
+
+      <!-- 11 -->
+      <article class="card-tilt bg-white rounded-2xl overflow-hidden" data-category="sci-fi">
+        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1600" alt="sci fi city" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-indigo-700">Silicon Rain</h3>
+          <p class="text-gray-600 mt-2">When the city's smart-sky starts rewriting code.</p>
+        </div>
+      </article>
+
+      <!-- 12 -->
+      <article class="card-tilt bg-white rounded-2xl overflow-hidden" data-category="fiction poetry">
+        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1600" alt="old cafe" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-indigo-700">Cafe of Lost Letters</h3>
+          <p class="text-gray-600 mt-2">Stories and poems found in the back of a cafe drawer.</p>
+        </div>
+      </article>
+
+      <!-- 13 -->
+      <article class="card-tilt bg-white rounded-2xl overflow-hidden" data-category="nonfiction lifestyle">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1600" alt="small business" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-indigo-700">Market Sundays</h3>
+          <p class="text-gray-600 mt-2">How small markets keep communities connected.</p>
+        </div>
+      </article>
+
+      <!-- 14 -->
+      <article class="card-tilt bg-white rounded-2xl overflow-hidden" data-category="fiction">
+        <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1600" alt="childhood backyard" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-indigo-700">Backyard Kingdom</h3>
+          <p class="text-gray-600 mt-2">A child's summer turns into a tale of courage.</p>
+        </div>
+      </article>
+
+      <!-- 15 -->
+      <article class="card-tilt bg-white rounded-2xl overflow-hidden" data-category="poetry">
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600" alt="typewriter poem" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-indigo-700">Paper & Ink</h3>
+          <p class="text-gray-600 mt-2">Poems about small rooms and large ideas.</p>
+        </div>
+      </article>
+
+      <!-- 16 -->
+      <article class="card-tilt bg-white rounded-2xl overflow-hidden" data-category="lifestyle nonfiction">
+        <img src="https://images.unsplash.com/photo-1524492412937-4961a1d0bd3c?q=80&w=1600" alt="travel journal" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-indigo-700">Suitcase Stories</h3>
+          <p class="text-gray-600 mt-2">Memoirs stitched from journeys across borders.</p>
+        </div>
+      </article>
+
+      <!-- 17 -->
+      <article class="card-tilt bg-white rounded-2xl overflow-hidden" data-category="sci-fi fiction">
+        <img src="https://images.unsplash.com/photo-1496307042754-5d7a2f3b21b6?q=80&w=1600" alt="starship" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-indigo-700">Orbit & Ashes</h3>
+          <p class="text-gray-600 mt-2">A small crew, one burning secret above the planet.</p>
+        </div>
+      </article>
+
+      <!-- 18 -->
+      <article class="card-tilt bg-white rounded-2xl overflow-hidden" data-category="fiction lifestyle">
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1600" alt="street market story" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-indigo-700">Window Stall</h3>
+          <p class="text-gray-600 mt-2">Neighbors meet at a street stall — lives change quietly.</p>
+        </div>
+      </article>
+
+      <!-- 19 -->
+      <article class="card-tilt bg-white rounded-2xl overflow-hidden" data-category="nonfiction">
+        <img src="https://images.unsplash.com/photo-1516910817561-0b0f1e9e1a97?q=80&w=1600" alt="journal" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-indigo-700">Letters to Tomorrow</h3>
+          <p class="text-gray-600 mt-2">Personal essays exploring hope and repair.</p>
+        </div>
+      </article>
+
+      <!-- 20 -->
+      <article class="card-tilt bg-white rounded-2xl overflow-hidden" data-category="poetry fiction">
+        <img src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=1600" alt="twilight" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-indigo-700">Twilight Letters</h3>
+          <p class="text-gray-600 mt-2">Short fiction & poems woven into small evening scenes.</p>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 py-8 text-center">
+      <p class="text-gray-400">© 2025 Pscrii. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const nav = document.querySelector('nav');
+    menuBtn && menuBtn.addEventListener('click', () => nav.classList.toggle('hidden'));
+
+    // filtering logic
+    const buttons = document.querySelectorAll(".chip");
+    const cards = document.querySelectorAll("#grid article");
+
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+        buttons.forEach(b => b.classList.remove("chip-active"));
+        button.classList.add("chip-active");
+
+        cards.forEach(card => {
+          const categories = card.dataset.category ? card.dataset.category.split(" ") : [];
+          card.style.display = (filter === "*" || categories.includes(filter)) ? "block" : "none";
+        });
+      });
+    });
+
+    // ensure all visible on load
+    document.addEventListener("DOMContentLoaded", () => {
+      cards.forEach(card => card.style.display = "block");
+    });
+  </script>
+
+</body>
+</html>

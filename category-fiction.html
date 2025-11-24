@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fiction Stories – Pscrii</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    .reveal { opacity:0; transform:translateY(20px); transition:.6s; }
+    .reveal.visible { opacity:1; transform:none; }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-inter">
+
+<header class="bg-white shadow sticky top-0 z-50">
+  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-indigo-600">Pscrii</h1>
+    <nav class="hidden md:flex gap-6">
+      <a href="tot.html" class="hover:text-indigo-600">Home</a>
+      <a href="categories.html" class="hover:text-indigo-600">Categories</a>
+      <a href="about.html" class="hover:text-indigo-600">About</a>
+      <a href="contact.html" class="hover:text-indigo-600">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="py-20 text-center bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 text-white">
+  <h2 class="text-4xl md:text-5xl font-bold mb-3">Fiction Stories</h2>
+  <p class="text-white/80 max-w-xl mx-auto">Imaginative tales, deep characters, unforgettable worlds.</p>
+</section>
+
+<main class="container mx-auto px-4 py-16 grid md:grid-cols-3 gap-10">
+
+  <article class="reveal bg-white rounded-xl shadow hover:shadow-lg transition">
+    <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80" class="h-56 w-full object-cover rounded-t-xl">
+    <div class="p-6">
+      <h3 class="font-semibold text-xl text-indigo-700">Whispers Under Pine</h3>
+      <p class="text-gray-600 mt-2">A town that listens to its trees—and the secrets they keep.</p>
+      <a href="#" class="text-indigo-600 font-medium block mt-4">Read More →</a>
+    </div>
+  </article>
+
+  <article class="reveal bg-white rounded-xl shadow hover:shadow-lg transition">
+    <img src="https://images.unsplash.com/photo-1531256379411-3a57b7e4fa56?q=80" class="h-56 w-full object-cover rounded-t-xl">
+    <div class="p-6">
+      <h3 class="font-semibold text-xl text-indigo-700">The Midnight Harbor</h3>
+      <p class="text-gray-600 mt-2">A young woman finds a harbor where time stands still.</p>
+      <a href="#" class="text-indigo-600 font-medium block mt-4">Read More →</a>
+    </div>
+  </article>
+
+</main>
+
+<footer class="bg-gray-900 text-white py-6 text-center">
+  <p>© 2025 Pscrii. All rights reserved.</p>
+</footer>
+
+<script>
+const observer=new IntersectionObserver((e)=>{
+  e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("visible");});
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>

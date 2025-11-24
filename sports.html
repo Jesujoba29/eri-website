@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sports — Pscrii</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    .floating-card { transition: 0.4s ease; }
+    .floating-card:hover { transform: translateY(-10px) scale(1.03); }
+    .glow-shadow { box-shadow: 0 0 25px rgba(99,102,241,0.4); }
+    .slide { animation: slide 14s linear infinite; }
+    @keyframes slide { 0%{transform:translateX(100%)}100%{transform:translateX(-100%)} }
+  </style>
+</head>
+<body class="bg-[#0c0c11] text-white font-inter">
+
+<header class="bg-[#0f0f14] border-b border-gray-800 fixed top-0 left-0 w-full z-50 shadow-xl">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+    <h1 class="text-3xl font-bold text-indigo-500 tracking-wide">Pscrii</h1>
+    <nav class="space-x-6 text-gray-300 font-medium hidden md:block">
+      <a href="tot.html" class="hover:text-indigo-400">Home</a>
+      <a href="Categories.html" class="hover:text-indigo-400">Categories</a>
+      <a href="sports.html" class="text-indigo-400 font-semibold">Sports</a>
+    </nav>
+  </div>
+</header>
+
+<!-- LIVE SCORE TICKER -->
+<div class="bg-indigo-600 text-white font-semibold py-2 mt-20 overflow-hidden">
+  <div class="whitespace-nowrap slide text-sm">
+    🔥 LIVE SCORE: Barcelona 2 - 1 Sevilla | ⚽ Man United 1 - 1 Chelsea | 🇳🇬 Nigeria 3 - 0 Ghana | PSG 4 - 2 Lyon | Real Madrid 1 - 0 Atletico
+  </div>
+</div>
+
+<section class="pt-10 max-w-7xl mx-auto px-4">
+  <div class="relative rounded-2xl overflow-hidden glow-shadow">
+    <img src="https://images.unsplash.com/photo-1505842465776-3d90f616310d?q=80&w=1400" class="w-full h-72 object-cover opacity-90" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+    <div class="absolute bottom-6 left-6">
+      <h2 class="text-4xl font-extrabold drop-shadow-lg">Sports Breaking News</h2>
+      <p class="text-gray-300 mt-1 text-sm">Live updates, match highlights & transfer stories.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LATEST NEWS GRID -->
+<section class="max-w-7xl mx-auto px-4 mt-12 grid md:grid-cols-3 gap-8">
+ 
+  <div class="bg-[#16161d] rounded-xl overflow-hidden floating-card">
+    <img src="https://images.unsplash.com/photo-1543322748-33df6d3d5cdd?q=80&w=1400" class="w-full h-48 object-cover" />
+    <div class="p-5">
+      <h3 class="text-xl font-bold text-indigo-400">Man City secure dramatic late win</h3>
+      <p class="text-gray-400 text-sm mt-2">Pep's side continues title race with a 92nd-minute strike.</p>
+    </div>
+  </div>
+
+  <div class="bg-[#16161d] rounded-xl overflow-hidden floating-card">
+    <img src="https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?q=80&w=1400" class="w-full h-48 object-cover" />
+    <div class="p-5">
+      <h3 class="text-xl font-bold text-indigo-400">UCL Knockout Draw Released</h3>
+      <p class="text-gray-400 text-sm mt-2">Huge clashes await as Europe's giants prepare for battle.</p>
+    </div>
+  </div>
+
+  <div class="bg-[#16161d] rounded-xl overflow-hidden floating-card">
+    <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1400" class="w-full h-48 object-cover" />
+    <div class="p-5">
+      <h3 class="text-xl font-bold text-indigo-400">Nigeria intensifies AFCON training</h3>
+      <p class="text-gray-400 text-sm mt-2">Super Eagles camp heats up with new tactical sessions.</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- TRANSFER NEWS SECTION -->
+<section class="max-w-7xl mx-auto px-4 mt-16">
+  <h2 class="text-2xl font-bold text-indigo-400 mb-4">🔥 Transfer News</h2>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-[#16161d] p-5 rounded-xl shadow-md">
+      <h3 class="font-bold text-lg">Barcelona eyes €80m striker signing</h3>
+      <p class="text-gray-400 text-sm mt-2">Talks progressing fast as Laporta pushes for January reinforcement.</p>
+    </div>
+
+    <div class="bg-[#16161d] p-5 rounded-xl shadow-md">
+      <h3 class="font-bold text-lg">Kylian Mbappé set for Real Madrid move</h3>
+      <p class="text-gray-400 text-sm mt-2">Sources confirm verbal agreement in place for summer window.</p>
+    </div>
+
+    <div class="bg-[#16161d] p-5 rounded-xl shadow-md">
+      <h3 class="font-bold text-lg">Arsenal prepares £60m bid for midfielder</h3>
+      <p class="text-gray-400 text-sm mt-2">Arteta identifies key reinforcement ahead of title push.</p>
+    </div>
+
+    <div class="bg-[#16161d] p-5 rounded-xl shadow-md">
+      <h3 class="font-bold text-lg">Chelsea considering major squad overhaul</h3>
+      <p class="text-gray-400 text-sm mt-2">Five players listed as the club looks to rebuild.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO HIGHLIGHTS SECTION -->
+<section class="max-w-7xl mx-auto px-4 mt-16">
+  <h2 class="text-2xl font-bold text-indigo-400 mb-4">🎬 Match Highlights</h2>
+
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="rounded-xl overflow-hidden bg-[#16161d] floating-card">
+      <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=1400" class="h-40 w-full object-cover" />
+      <div class="p-4">Premier League: Last-minute goals thrill fans.</div>
+    </div>
+
+    <div class="rounded-xl overflow-hidden bg-[#16161d] floating-card">
+      <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1400" class="h-40 w-full object-cover" />
+      <div class="p-4">UCL Highlights: Shocking comebacks.</div>
+    </div>
+
+    <div class="rounded-xl overflow-hidden bg-[#16161d] floating-card">
+      <img src="https://images.unsplash.com/photo-1459865264687-595d652de67e?q=80&w=1400" class="h-40 w-full object-cover" />
+      <div class="p-4">AFCON: Top goals from the week.</div>
+    </div>
+  </div>
+</section>
+
+<footer class="text-center text-gray-500 py-10 mt-20 border-t border-gray-800">© 2025 Pscrii — All Rights Reserved.</footer>
+
+</body>
+</html>
